@@ -1,0 +1,11 @@
+group: include_base_44_continuation
+task:
+  - include_base_44_arabic_continuation
+  - include_base_44_chinese_continuation
+  - include_base_44_french_continuation
+  - include_base_44_spanish_continuation
+aggregate_metric_list:
+  - metric: acc
+    weight_by_size: True
+metadata:
+  version: 1.0

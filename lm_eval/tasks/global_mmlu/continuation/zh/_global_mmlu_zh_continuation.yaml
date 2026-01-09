@@ -1,0 +1,13 @@
+group: global_mmlu_zh_continuation
+task:
+  - global_mmlu_zh_business_continuation
+  - global_mmlu_zh_humanities_continuation
+  - global_mmlu_zh_medical_continuation
+  - global_mmlu_zh_other_continuation
+  - global_mmlu_zh_stem_continuation
+  - global_mmlu_zh_social_sciences_continuation
+aggregate_metric_list:
+  - metric: acc
+    weight_by_size: True
+metadata:
+  version: 0.0
