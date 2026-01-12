@@ -1,9 +1,49 @@
 group: include_base_44_continuation
 task:
+  - include_base_44_albanian_continuation
   - include_base_44_arabic_continuation
+  - include_base_44_armenian_continuation
+  - include_base_44_azerbaijani_continuation
+  - include_base_44_basque_continuation
+  - include_base_44_belarusian_continuation
+  - include_base_44_bengali_continuation
+  - include_base_44_bulgarian_continuation
+  - include_base_44_estonian_continuation
   - include_base_44_chinese_continuation
+  - include_base_44_croatian_continuation
+  - include_base_44_dutch_continuation
+  - include_base_44_finnish_continuation
   - include_base_44_french_continuation
+  - include_base_44_georgian_continuation
+  - include_base_44_german_continuation
+  - include_base_44_greek_continuation
+  - include_base_44_hebrew_continuation
+  - include_base_44_hindi_continuation
+  - include_base_44_hungarian_continuation
+  - include_base_44_indonesian_continuation
+  - include_base_44_italian_continuation
+  - include_base_44_japanese_continuation
+  - include_base_44_kazakh_continuation
+  - include_base_44_korean_continuation
+  - include_base_44_lithuanian_continuation
+  - include_base_44_malay_continuation
+  - include_base_44_malayalam_continuation
+  - include_base_44_nepali_continuation
+  - include_base_44_north macedonian_continuation
+  - include_base_44_persian_continuation
+  - include_base_44_polish_continuation
+  - include_base_44_portuguese_continuation
+  - include_base_44_russian_continuation
+  - include_base_44_serbian_continuation
   - include_base_44_spanish_continuation
+  - include_base_44_tagalog_continuation
+  - include_base_44_tamil_continuation
+  - include_base_44_telugu_continuation
+  - include_base_44_turkish_continuation
+  - include_base_44_ukrainian_continuation
+  - include_base_44_urdu_continuation
+  - include_base_44_uzbek_continuation
+  - include_base_44_vietnamese_continuation
 aggregate_metric_list:
   - metric: acc
     weight_by_size: True

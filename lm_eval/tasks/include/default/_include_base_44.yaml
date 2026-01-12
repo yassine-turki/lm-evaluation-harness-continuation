@@ -8,6 +8,7 @@ task:
   - include_base_44_belarusian
   - include_base_44_bengali
   - include_base_44_bulgarian
+  - include_base_44_estonian
   - include_base_44_chinese
   - include_base_44_croatian
   - include_base_44_dutch
@@ -40,6 +41,7 @@ task:
   - include_base_44_telugu
   - include_base_44_turkish
   - include_base_44_ukrainian
+  - include_base_44_urdu
   - include_base_44_uzbek
   - include_base_44_vietnamese
 aggregate_metric_list:

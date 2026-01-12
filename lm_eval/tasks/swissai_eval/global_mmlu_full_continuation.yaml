@@ -1,0 +1,53 @@
+group: global_mmlu_full_continuation
+task:
+  - global_mmlu_full_am_continuation
+  - global_mmlu_full_ar_continuation
+  - global_mmlu_full_bn_continuation
+  - global_mmlu_full_cs_continuation
+  - global_mmlu_full_de_continuation
+  - global_mmlu_full_el_continuation
+  - global_mmlu_full_en_continuation
+  - global_mmlu_full_es_continuation
+  - global_mmlu_full_fa_continuation
+  - global_mmlu_full_fil_continuation
+  - global_mmlu_full_fr_continuation
+  - global_mmlu_full_ha_continuation
+  - global_mmlu_full_he_continuation
+  - global_mmlu_full_hi_continuation
+  - global_mmlu_full_id_continuation
+  - global_mmlu_full_ig_continuation
+  - global_mmlu_full_it_continuation
+  - global_mmlu_full_ja_continuation
+  - global_mmlu_full_ko_continuation
+  - global_mmlu_full_ky_continuation
+  - global_mmlu_full_lt_continuation
+  - global_mmlu_full_mg_continuation
+  - global_mmlu_full_ms_continuation
+  - global_mmlu_full_ne_continuation
+  - global_mmlu_full_nl_continuation
+  - global_mmlu_full_ny_continuation
+  - global_mmlu_full_pl_continuation
+  - global_mmlu_full_pt_continuation
+  - global_mmlu_full_ro_continuation
+  - global_mmlu_full_ru_continuation
+  - global_mmlu_full_si_continuation
+  - global_mmlu_full_sn_continuation
+  - global_mmlu_full_so_continuation
+  - global_mmlu_full_sr_continuation
+  - global_mmlu_full_sv_continuation
+  - global_mmlu_full_sw_continuation
+  - global_mmlu_full_te_continuation
+  - global_mmlu_full_tr_continuation
+  - global_mmlu_full_uk_continuation
+  - global_mmlu_full_vi_continuation
+  - global_mmlu_full_yo_continuation
+  - global_mmlu_full_zh_continuation
+aggregate_metric_list:
+  - metric: acc
+    aggregation: mean
+    weight_by_size: false  # Set to false if you want unweighted average
+  - metric: acc_norm
+    aggregation: mean
+    weight_by_size: false
+metadata:
+  version: 1.0

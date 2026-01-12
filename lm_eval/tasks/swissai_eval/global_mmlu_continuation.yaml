@@ -1,20 +1,25 @@
 group: global_mmlu_continuation
 task:
   - global_mmlu_ar_continuation
+  - global_mmlu_bn_continuation
+  - global_mmlu_de_continuation
+  - global_mmlu_en_continuation
   - global_mmlu_es_continuation
   - global_mmlu_fr_continuation
+  - global_mmlu_hi_continuation
+  - global_mmlu_id_continuation
+  - global_mmlu_it_continuation
+  - global_mmlu_ja_continuation
+  - global_mmlu_ko_continuation
+  - global_mmlu_pt_continuation
+  - global_mmlu_sw_continuation
+  - global_mmlu_yo_continuation
   - global_mmlu_zh_continuation
 aggregate_metric_list:
   - metric: acc
     aggregation: mean
     weight_by_size: false  # Set to false if you want unweighted average
   - metric: acc_norm
-    aggregation: mean
-    weight_by_size: false
-  - metric: perplexity
-    aggregation: mean
-    weight_by_size: false
-  - metric: f1
     aggregation: mean
     weight_by_size: false
 metadata:
