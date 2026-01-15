@@ -2,6 +2,7 @@ group: continuation
 task:
   - include_base_44_continuation
   - global_mmlu_continuation
+  - mmlu_continuation
 aggregate_metric_list:
   - metric: acc
     aggregation: mean

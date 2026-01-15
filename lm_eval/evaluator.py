@@ -472,11 +472,31 @@ def evaluate(
     # Cache the limit arg.
     limit_arg = limit
     limits = []
+    processed_tasks = []  # Track which tasks were actually processed (not skipped)
     for task_output in eval_tasks:
         task: Task = task_output.task
 
+        # Skip tasks with fewer documents than world_size to avoid empty ranks
+        if lm.world_size > 1:
+            try:
+                total_docs = len(task.eval_docs)
+                if total_docs < lm.world_size:
+                    eval_logger.warning(
+                        f"Skipping task '{task_output.task_name}' because it has only {total_docs} "
+                        f"document(s), which is fewer than the number of GPUs ({lm.world_size}). "
+                        f"This would cause some ranks to have no documents to process."
+                    )
+                    # Initialize _instances to empty list for skipped tasks to avoid AttributeError later
+                    task._instances = []
+                    continue
+            except (AttributeError, TypeError):
+                # If we can't determine the document count, proceed anyway
+                # (some tasks might have lazy-loaded docs)
+                pass
+
         limit = get_sample_size(task, limit_arg)
         limits.append(limit)
+        processed_tasks.append(task_output)
         task.build_all_requests(
             limit=limit,
             rank=lm.rank,
@@ -546,8 +566,11 @@ def evaluate(
     WORLD_SIZE = lm.world_size
     ### Postprocess outputs ###
     # TODO: del model here, maybe (idea: allow user to specify device of e.g. reward model separately)
-    for task_output, limit in zip(eval_tasks, limits):
+    for task_output, limit in zip(processed_tasks, limits):
         task = task_output.task
+        # Skip tasks that were skipped earlier (they have empty _instances)
+        if not hasattr(task, '_instances') or len(task._instances) == 0:
+            continue
         task.apply_filters()
 
         ### Collect values of metrics on all datapoints ###
