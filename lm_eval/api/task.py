@@ -1506,6 +1506,15 @@ class ConfigurableTask(Task):
             # retrieve choices in List[str] form, to compute choice lengths, etc.
             choices = self.doc_to_choice(doc)
             completion_len = np.array([float(len(i)) for i in choices])
+            
+            # Debug: Check for empty completions
+            if np.any(completion_len == 0):
+                import logging
+                eval_logger = logging.getLogger("lm-eval")
+                eval_logger.warning(
+                    f"Found empty completion(s) in task {self.config.task}. "
+                    f"Choices: {choices}, Lengths: {completion_len.tolist()}"
+                )
 
             if (
                 2 * len(choices) == len(lls)
