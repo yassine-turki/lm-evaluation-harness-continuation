@@ -1,0 +1,4 @@
+# Generated for continuation format
+dataset_name: fr
+include: _default_continuation_yaml
+task: m_mmlu_fr_continuation

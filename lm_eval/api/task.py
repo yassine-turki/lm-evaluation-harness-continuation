@@ -1509,8 +1509,6 @@ class ConfigurableTask(Task):
             
             # Debug: Check for empty completions
             if np.any(completion_len == 0):
-                import logging
-                eval_logger = logging.getLogger("lm-eval")
                 eval_logger.warning(
                     f"Found empty completion(s) in task {self.config.task}. "
                     f"Choices: {choices}, Lengths: {completion_len.tolist()}"
