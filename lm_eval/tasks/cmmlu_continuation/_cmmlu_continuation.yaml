@@ -70,9 +70,9 @@ task:
 aggregate_metric_list:
   - aggregation: mean
     metric: acc
-    weight_by_size: false
+    weight_by_size: true
   - aggregation: mean
     metric: acc_norm
-    weight_by_size: false
+    weight_by_size: true
 metadata:
   version: 1.0

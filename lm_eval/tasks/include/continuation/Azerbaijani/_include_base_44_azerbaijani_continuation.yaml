@@ -8,8 +8,10 @@ task:
 - include_base_44_azerbaijani_health_oriented_education_continuation
 aggregate_metric_list:
 - metric: acc
-  weight_by_size: false
+  aggregation: mean
+  weight_by_size: true
 - metric: acc_norm
-  weight_by_size: false
+  aggregation: mean
+  weight_by_size: true
 metadata:
   version: 0.0
