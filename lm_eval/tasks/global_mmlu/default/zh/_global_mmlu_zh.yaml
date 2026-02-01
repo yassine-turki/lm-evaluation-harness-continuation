@@ -8,6 +8,10 @@ task:
   - global_mmlu_zh_social_sciences
 aggregate_metric_list:
   - metric: acc
-    weight_by_size: True
+    aggregation: mean
+    weight_by_size: true
+  - metric: acc_norm
+    aggregation: mean
+    weight_by_size: true
 metadata:
   version: 0.0
